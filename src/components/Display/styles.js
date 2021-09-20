@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import colours from '../../data/colours';
+import { fadeIn, fadeInJunction } from '../keyframes';
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 1.5em;
+
   color: white;
   padding: 1em;
   background-color: ${colours.sixth};
@@ -29,6 +31,8 @@ export const Sum = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid white;
+
+  animation: ${fadeInJunction} 3s linear;
 `;
 
 export const ItemWrapper = styled.span`
@@ -56,6 +60,8 @@ export const Item = styled.div`
   border-radius: 5px;
   font-size: 12pt;
   width: 104%;
+
+  animation: ${fadeIn} 1s linear;
 `;
 
 export const RemoveButton = styled.button`

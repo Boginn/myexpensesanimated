@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colours from '../../data/colours';
+import { slideInTop, fadeInLate } from '../keyframes';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -16,9 +17,12 @@ export const Wrapper = styled.div`
 export const DividerLine = styled.hr`
   width: 50%;
   border-color: ${colours.primary};
+  animation: ${slideInTop} 2s linear;
 `;
 
 export const ContactInfo = styled.p`
   color: ${colours.primary};
+  animation: ${fadeInLate} 5s linear;
+
   text-align: center;
 `;

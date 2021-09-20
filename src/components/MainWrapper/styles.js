@@ -10,6 +10,9 @@ export const Wrapper = styled.div`
   border-radius: 10px;
   box-shadow: 1px 1px 1px black;
 
+  margin: auto;
+  overflow: hidden;
+
   position: fixed;
   top: 50%;
   left: 50%;

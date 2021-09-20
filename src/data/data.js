@@ -5,6 +5,8 @@ const data = {
   amount: 0,
   array: [],
   sum: 0,
+  doneOnce: false,
+  isDemo: true,
 };
 
 export default data;

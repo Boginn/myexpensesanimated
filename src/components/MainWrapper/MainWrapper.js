@@ -2,12 +2,13 @@ import { Wrapper } from './styles';
 
 function MainWrapper(props) {
   const { children } = props;
-  console.log(children);
+  const content = children[0];
+  const footer = children[1];
   return (
     <div>
       {' '}
-      <Wrapper>{children[0]}</Wrapper>
-      {children[1]}
+      <Wrapper>{content}</Wrapper>
+      {footer}
     </div>
   );
 }

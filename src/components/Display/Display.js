@@ -6,7 +6,10 @@ function Display(props) {
   return (
     <Wrapper>
       <Sum>
-        <span>Total</span>
+        <span>
+          Total
+          {!!array.length && <span>({array.length})</span>}
+        </span>
         <span>{sum}</span>
       </Sum>
       <List>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colours from '../../data/colours';
+import { fadeInSlow } from '../keyframes';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,6 +9,8 @@ export const Wrapper = styled.div`
   padding: 15px;
   padding-left: 40px;
   padding-right: 40px;
+
+  animation: ${fadeInSlow} 10s linear;
 `;
 
 export const AddButton = styled.button`

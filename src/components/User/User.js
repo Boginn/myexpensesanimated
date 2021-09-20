@@ -1,10 +1,11 @@
 import { useRef } from 'react';
+
 import { AddButton, Wrapper, ItemInput, TitleText } from './styles';
 
 function User(props) {
   const inputName = useRef(null);
   const inputNumber = useRef(null);
-  const { handleSubmit, setFormData } = props;
+  const { handleSubmit, setFormData, isDemo } = props;
 
   const resetForm = () => {
     inputName.current.value = null;
@@ -26,11 +27,21 @@ function User(props) {
   return (
     <Wrapper>
       <TitleText>Item</TitleText>
-      <ItemInput type="text" ref={inputName} onChange={handleChange} />
+      <ItemInput
+        disabled={isDemo}
+        type="text"
+        ref={inputName}
+        onChange={handleChange}
+      />
       <TitleText>Price</TitleText>
-      <ItemInput type="number" ref={inputNumber} onChange={handleChange} />
+      <ItemInput
+        disabled={isDemo}
+        type="number"
+        ref={inputNumber}
+        onChange={handleChange}
+      />
       <div>
-        <AddButton type="button" onClick={() => handleAdd()}>
+        <AddButton disabled={isDemo} type="button" onClick={() => handleAdd()}>
           &#43;
         </AddButton>
       </div>

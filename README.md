@@ -1,3 +1,3 @@
 # Finnbogi Jökull Pétursson
 
-## myexpenses
+## myexpensesanimated

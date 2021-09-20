@@ -5,8 +5,8 @@ const Footer = (props) => {
 
   return (
     <Wrapper>
-      <DividerLine />
       <ContactInfo>{author}</ContactInfo>
+      <DividerLine />
     </Wrapper>
   );
 };
