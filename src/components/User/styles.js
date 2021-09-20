@@ -34,6 +34,8 @@ export const AddButton = styled.button`
 
 export const ItemInput = styled.input`
   background-color: ${colours.fifth};
+  color: white;
+  text-shadow: 2px 2px black;
   height: 20px;
   &:hover {
     background-color: ${colours.fourth};
@@ -45,5 +47,5 @@ export const TitleText = styled.p`
   margin: auto;
   margin-bottom: 0;
   margin-top: 50px;
-  text-shadow: black 1px 1px;
+  text-shadow: 2px 2px black;
 `;

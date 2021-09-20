@@ -14,9 +14,8 @@ function Display(props) {
       </Sum>
       <List>
         {array.map((item) => (
-          <ItemWrapper>
-            <Item key={item.id}>
-              {/* Warning: Each child in a list should have a unique "key" prop. */}
+          <ItemWrapper key={item.id}>
+            <Item>
               <span>{item.name}</span>
 
               <span>{item.amount}</span>

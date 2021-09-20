@@ -3,8 +3,6 @@ import colours from '../../data/colours';
 
 export const Wrapper = styled.div`
   background-color: ${colours.fourth};
-  display: flex;
-  flex-direction: column;
   font-size: calc(10px + 2vmin);
   align-items: center;
   border-radius: 10px;

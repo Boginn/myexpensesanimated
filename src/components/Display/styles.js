@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import colours from '../../data/colours';
-import { fadeIn, fadeInJunction } from '../keyframes';
+import { slideSide, fadeInJunction } from '../keyframes';
 
 export const Wrapper = styled.div`
-  display: flex;
   flex-direction: column;
   font-size: 1.5em;
 
@@ -42,8 +41,8 @@ export const ItemWrapper = styled.span`
 
 export const Item = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  text-shadow: 2px 2px black;
 
   background: linear-gradient(
     95deg,
@@ -61,7 +60,7 @@ export const Item = styled.div`
   font-size: 12pt;
   width: 104%;
 
-  animation: ${fadeIn} 1s linear;
+  animation: ${slideSide} 1s linear;
 `;
 
 export const RemoveButton = styled.button`

@@ -1,20 +1,17 @@
 import { useState, useEffect } from 'react';
 import Icon from '@mdi/react';
 import { mdiLoading } from '@mdi/js';
+import { v4 as uuidv4 } from 'uuid';
 import initialState from '../../data/data';
 import { Display, User } from '..';
 import { LoadingIcon, Wrapper } from './styles';
 
 const Content = () => {
   const [state, setState] = useState(initialState);
-  const { id, name, amount, array, sum, doneOnce, isDemo } = state;
+  const { name, amount, array, sum, doneOnce, isDemo } = state;
 
   const getId = () => {
-    return id;
-  };
-
-  const updateId = () => {
-    return id + 1;
+    return uuidv4();
   };
 
   const handleRemove = (itemId) => {
@@ -51,8 +48,6 @@ const Content = () => {
       newArray = array.concat({ amount, name, id: getId() });
       setState({
         ...state,
-        id: updateId(),
-
         array: newArray,
         sum: amount + sum,
       });
@@ -60,19 +55,17 @@ const Content = () => {
   };
 
   useEffect(() => {
+    // reset form data on sum change to prevent spam clicking submit with the same data
     resetFormData();
   }, [sum]);
 
   useEffect(() => {
-    // adds an example after 3 seconds and then deletes it later
+    // adds an example after 3 seconds and then resets the array and enables inputs
     if (!doneOnce) {
       const entry = { amount: 487, name: 'Example', id: getId() };
       setTimeout(() => {
         setState({
           ...state,
-          id: updateId(),
-          name,
-          amount,
           array: array.concat(entry),
           sum: entry.amount,
           doneOnce: true,
@@ -82,9 +75,6 @@ const Content = () => {
       setTimeout(() => {
         setState({
           ...state,
-          id: updateId(),
-          name,
-          amount,
           array: [],
           sum: amount + sum,
           doneOnce: true,
@@ -97,7 +87,7 @@ const Content = () => {
   return (
     <Wrapper>
       <LoadingIcon>
-        <Icon path={mdiLoading} size={1} horizontal vertical rotate={90} spin />
+        <Icon path={mdiLoading} size={2} horizontal vertical rotate={90} spin />
       </LoadingIcon>
       <User
         handleSubmit={handleSubmit}
